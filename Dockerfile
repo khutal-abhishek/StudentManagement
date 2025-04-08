@@ -1,14 +1,14 @@
-# Use a base image with JDK
+# Use a base image with JDK 17
 FROM openjdk:17-jdk-slim
 
-# Set working directory inside container
+# Set working directory inside the container
 WORKDIR /app
 
-# Copy the jar file to the container
+# Copy the built JAR file
 COPY target/StudentManagement-0.0.1-SNAPSHOT.jar app.jar
 
-# Expose port
+# Expose the application port
 EXPOSE 8080
 
-# Run the jar file
+# Run the JAR file
 ENTRYPOINT ["java", "-jar", "app.jar"]
